@@ -15,12 +15,6 @@ Systemd traffic simulation service based on `lightCons_cron.sh`.
 curl -fsSL https://raw.githubusercontent.com/Syther007/traffic-sim-service/main/install.sh | sudo bash
 ```
 
-Optional: override repo URL if needed:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Syther007/traffic-sim-service/main/install.sh | sudo REPO_URL="https://github.com/Syther007/traffic-sim-service.git" bash
-```
-
 ## Service control
 
 ```bash

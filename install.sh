@@ -7,7 +7,7 @@ SERVICE_USER="trafficsim"
 INSTALL_DIR="/opt/traffic-sim-service"
 SYSTEMD_UNIT_PATH="/etc/systemd/system/${SERVICE_NAME}.service"
 LOGROTATE_PATH="/etc/logrotate.d/${SERVICE_NAME}"
-REPO_URL="${REPO_URL:-https://github.com/REPLACE_ME/traffic-sim-service.git}"
+REPO_URL="${REPO_URL:-https://github.com/Syther007/traffic-sim-service.git}"
 
 require_root() {
   if [[ "${EUID}" -ne 0 ]]; then
