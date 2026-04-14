@@ -1,0 +1,8 @@
+/opt/traffic-sim-service/logs/debug.log /opt/traffic-sim-service/logs/error.log {
+    size 20M
+    rotate 1
+    missingok
+    notifempty
+    copytruncate
+    compress
+}

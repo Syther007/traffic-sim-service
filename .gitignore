@@ -1,0 +1,12 @@
+# Runtime artifacts
+logs/
+statistics.txt
+
+# Backup/rotation artifacts
+*.log
+*.log.*
+
+# OS/editor
+.DS_Store
+
+plan.md

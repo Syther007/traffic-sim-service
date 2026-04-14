@@ -1,0 +1,27 @@
+[Unit]
+Description=Traffic Sim Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trafficsim
+Group=trafficsim
+WorkingDirectory=/opt/traffic-sim-service
+Environment=BASE_DIR=/opt/traffic-sim-service
+Environment=LOG_DIR=/opt/traffic-sim-service/logs
+Environment=STATS_FILE=/opt/traffic-sim-service/statistics.txt
+Environment=DEBUG_LOG=/opt/traffic-sim-service/logs/debug.log
+Environment=ERROR_LOG=/opt/traffic-sim-service/logs/error.log
+Environment=DELAY_SECONDS=5
+Environment=REQUEST_TIMEOUT_SECONDS=5
+Environment=PROXY_ADDR=127.0.0.1:443
+Environment=MAX_LOG_SIZE_BYTES=20971520
+ExecStart=/usr/bin/env bash /opt/traffic-sim-service/lightCons_cron.sh
+Restart=always
+RestartSec=3
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
