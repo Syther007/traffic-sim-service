@@ -11,8 +11,16 @@ Systemd traffic simulation service based on `lightCons_cron.sh`.
 
 ## One-command deploy
 
+Default delay is 5 seconds.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Syther007/traffic-sim-service/main/install.sh | sudo bash
+```
+
+Set custom delay during install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Syther007/traffic-sim-service/main/install.sh | sudo DELAY_SECONDS=10 bash
 ```
 
 ## Service control
@@ -34,15 +42,22 @@ sudo systemctl enable traffic-sim
 
 ## Configure runtime behavior
 
-Edit the unit file and restart the service:
+Simple post-install delay update:
 
 ```bash
-sudo systemctl edit --full traffic-sim
+sudo /opt/traffic-sim-service/set_delay.sh 10
+```
+
+Manual method:
+
+```bash
+sudo mkdir -p /etc/systemd/system/traffic-sim.service.d
+printf "[Service]\nEnvironment=DELAY_SECONDS=10\n" | sudo tee /etc/systemd/system/traffic-sim.service.d/override.conf >/dev/null
 sudo systemctl daemon-reload
 sudo systemctl restart traffic-sim
 ```
 
-Useful environment values in the unit:
+Useful environment values:
 
 - `DELAY_SECONDS`
 - `REQUEST_TIMEOUT_SECONDS`

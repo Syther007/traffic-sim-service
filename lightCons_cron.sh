@@ -23,8 +23,6 @@ allThreads=(
   "https://icanhazip.com"
   "https://cats.com"
   "https://cat.com"
-  "https://fish.com"
-  "https://www.dog.com"
   "https://api.ipify.org"
   "https://puginarug.com/"
   "https://optical.toys/"
